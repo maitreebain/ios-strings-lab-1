@@ -158,8 +158,28 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
-```
+```swift
+var flower = "\u{2698}"
 
+for _ in 1...11 {
+        print("-" , terminator: " ")
+}
+
+print()
+var num = 0
+
+repeat {
+    for _ in 1...5 {
+    print("| \u{2698}", terminator: " ")
+}
+print("|")
+    num += 1
+} while num <= 7
+
+for _ in 1...11 {
+print("-" , terminator: " ")
+}
+```
 ***
 ## Question 13
 
@@ -175,6 +195,33 @@ Chess Board:
 
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+
+```swift
+
+var whitePieces = "\u{2656} \u{2658} \u{2657} \u{2655} \u{2654} \u{2657} \u{2658} \u{2656}"
+var blackPieces = "\u{265C} \u{265E} \u{265D} \u{265B} \u{265A} \u{265D} \u{265E} \u{265C}"
+
+var bSoilders = "\u{265F}"
+var wSoilders = "\u{2659}"
+
+var chessboard = true
+
+if chessboard == true{
+    print(whitePieces)
+    for _ in 1...8 {
+        print(wSoilders, terminator: " ")
+    }
+    print()
+    for _ in 1...5{
+            print()
+        }
+    for _ in 1...8{
+        print(bSoilders, terminator: " ")
+    }
+    print()
+    print(blackPieces)
+}
+
 ```
 
 ***
@@ -184,8 +231,11 @@ You are given a string stored in the variable `aString`. Create new string named
 
 ```swift
 var aString = "Replace the letter e with *"
-// Your code here
- ```
+
+var replacedString = aString.replacingOccurrences(of: "e", with: "*")
+print(replacedString)
+
+```
 
 Example:
 
@@ -205,6 +255,11 @@ var aString = "this string has 29 characters"
 var reverse = ""
 
 // Your code here
+var aString = "this string has 29 characters"
+for reversed in aString.reversed() {
+    print(reversed, terminator: " ")
+}
+
 ```
 
 Example:
