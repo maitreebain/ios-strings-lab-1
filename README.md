@@ -15,26 +15,60 @@ Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
 ***
+```swift
+for range in 1...10 {
+    print(String(range), terminator : " ")
+}
+```
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
 ***
+```swift
+for range in 5...51 where range % 2 == 0{
+    print(String(range), terminator : " ")
+}
+```
+
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
 ***
+```swift 
+for range in 1...60 where range % 10 == 4{
+    print(String(range), terminator : " ")
+}
+
+```
 ## Question 4
 
 Print each character in the string `"Hello world!"`
-
 ***
+```swift
+let helloWorld = "Hello World"
+
+for char in helloWorld{
+        print("character is: \(char)")
+}
+
+```
 ## Question 5
 
 Print out the last character in the string below.  You cannot use the Character literal "!" (i.e you must access `myStringSeven`'s characters).
 
 `let myStringSeven = "Hello world!"`
+
+```swift
+let myStringSeven = "Hello World!"
+
+let endIndex = myStringSeven.endIndex
+let lastIndex = myStringSeven.index(before: endIndex)
+let lastCharacter = myStringSeven[lastIndex]
+
+print(lastCharacter)
+```
 
 ***
 ## Question 6
@@ -44,21 +78,56 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is odd, print out every other character.
 
 ***
+```swift
+let char = "code"
+
+if char.count % 2 == 0 {
+    print("string is even")
+} else {
+    print("string is odd")
+}
+
+switch char {
+case char where char.count % 2 == 0:
+    for num in char{
+    print(num, terminator: " ")
+    }
+default:
+    for (index, num) in char.enumerated() where index % 2 == 1{
+        print(num, terminator: " ")
+}
+}
+```
 ## Question 7
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
 
 ***
+```swift
+let char: Character = "a"
+let str = String(char)
+
+print(str)
+```
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
 ***
+```swift
+
+
+```
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
 
 ***
+```swift
+
+let helloWorld = ("\u{0048}\u{0045}\u{004C}\u{004C}\u{004F} \u{0057}\u{004F}\u{0052}\u{004C}\u{0044}")
+print(helloWorld)
+```
 ## Question 10
 
 **Using only Unicode**, print out your name.
